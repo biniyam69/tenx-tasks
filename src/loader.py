@@ -1,13 +1,13 @@
-import json
 import argparse
-import os
-import io
-import shutil
 import copy
+import io
+import json
+import os
+import shutil
 from datetime import datetime
-from pick import pick
 from time import sleep
 
+from pick import pick
 
 
 # Create wrapper classes for using slack_sdk in place of slacker
@@ -30,19 +30,24 @@ class SlackDataLoader:
     '''
     def __init__(self, path):
         '''
-        path: path to the slack exported data folder
+        path: path to data
         '''
-        self.path = path
+        self.path = "/home/biniyam/tenx-tasks/tenxdata"
         self.channels = self.get_channels()
-        self.users = self.get_ussers()
+        self.users = self.get_users()
+
     
 
     def get_users(self):
         '''
         write a function to get all the users from the json file
         '''
+        
         with open(os.path.join(self.path, 'users.json'), 'r') as f:
             users = json.load(f)
+        
+        
+
 
         return users
     
@@ -52,6 +57,7 @@ class SlackDataLoader:
         '''
         with open(os.path.join(self.path, 'channels.json'), 'r') as f:
             channels = json.load(f)
+        
 
         return channels
 
@@ -60,18 +66,34 @@ class SlackDataLoader:
         write a function to get all the messages from a channel
         
         '''
+        messages = []
+        channel_id = None
+        for channel in self.channels:
+            if channel['name'] == channel_name:
+                channel_id = channel['id']
+                break
+        if channel_id is None:
+            raise Exception('Channel not found')
+        for file in os.listdir(os.path.join(self.path, channel_id)):
+            if file.endswith('.json'):
+                with open(os.path.join(self.path, channel_id, file), 'r') as f:
+                    messages.extend(json.load(f))
+        return messages
+
 
     # 
     def get_user_map(self):
         '''
         write a function to get a map between user id and user name
         '''
+
         userNamesById = {}
         userIdsByName = {}
         for user in self.users:
             userNamesById[user['id']] = user['name']
             userIdsByName[user['name']] = user['id']
-        return userNamesById, userIdsByName        
+        return userNamesById, userIdsByName  
+
 
 
 

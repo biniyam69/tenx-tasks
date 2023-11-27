@@ -159,5 +159,4 @@ venv.bak/
 .mypy_cache/
 
 #Data
-
 tenxdata/
