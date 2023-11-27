@@ -1,5 +1,5 @@
 
-# Network Analysis Python Package
+# 10 Academy Challenges
 
 ## Overview
 
