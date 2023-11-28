@@ -15,10 +15,7 @@ This repository contains the code files for Ten Academy's Challenges.
   - [Data Loading](#data-loading)
   - [Utilities](#utilities)
 - [Testing](#testing)
-- [Documentation](#documentation)
 - [Notebooks](#notebooks)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -78,16 +75,15 @@ If you prefer using `venv`, Python's built-in virtual environment module:
 Now, your virtual environment is created and activated. You can install packages and run your Python scripts within this isolated environment. Don't forget to install required packages using `pip` or `conda` once the environment is activated.
 
 ### Clone this package
-
-To install the `network_analysis` package, follow these steps:
+To test out this project please do the following
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/network_analysis.git
+    git clone https://github.com/your-username/tenx-tasks.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd network_analysis
+    cd tenx-tasks
     ```
  
 3. Install the required dependencies:
@@ -140,25 +136,8 @@ make test
 
 This will execute the unit tests located in the tests directory.
 
-## Documentation
-Visit the docs directory for additional documentation and resources. The documentation covers important aspects such as code structure, best practices, and additional usage examples.
-
 ## Notebooks
 The notebooks directory contains Jupyter notebooks that demonstrate specific use cases and analyses. Refer to these notebooks for hands-on examples.
-
-## Contributing
-Contributions are welcome! Before contributing, please review our contribution guidelines.
-
-##  License
-This project is licensed under the MIT License.
-
-## Network Analysis
-
-This is a starter python package to analze the slack data to learn about
-
-* Patter of users messaging behaviour
-* Patter of replies and reactions of users to messages posted both by peers and admins
-* Discover sub-communities by building network graphs of message senders and those who reply or react to those messages
 
 
 
