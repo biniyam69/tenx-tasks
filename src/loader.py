@@ -138,12 +138,9 @@ class SlackDataLoader:
     '''
 
     # combine all json file in all-weeks8-9
-    def slack_parser(path_channel):
+    def slack_parser(paths):
         """Parse Slack data to extract useful information from JSON files."""
-
-        # Get all JSON file paths in the specified directory
-        json_files = glob.glob(f"{path_channel}/*/*.json")
-
+        
         #initialize lists to store extracted data
         all_data = {
             'msg_type': [], 'msg_content': [], 'sender_name': [],
@@ -151,40 +148,46 @@ class SlackDataLoader:
             'reply_count': [], 'reply_users_count': [], 'reply_users': [],
             'tm_thread_end': [], 'channel': []
         }
-        #loop through each JSON file path
-        for file_path in json_files:
-            with open(file_path, 'r', encoding="utf8") as file:
-                json_data = json.load(file)
+        
+        for path_channel in paths:
+            # Get all JSON file paths in the specified directory
+            json_files = glob.glob(f"{path_channel}/*.json")
+            
+            # loop through each JSON file path
+            for file_path in json_files:
+                with open(file_path, 'r', encoding="utf8") as file:
+                    json_data = json.load(file)
 
-                for row in json_data:
-                    all_data['msg_type'].append(row.get('type', ''))
-                    all_data['msg_content'].append(row.get('text', ''))
-                    all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
-                    all_data['msg_sent_time'].append(row.get('ts', ''))
-                    if 'blocks' in row and row['blocks']:
-                        block = row['blocks'][0]
-                        if 'elements' in block and block['elements']:
-                            element = block['elements'][0]
-                            if 'elements' in element and element['elements']:
-                                all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
+                    for row in json_data:
+                        all_data['msg_type'].append(row.get('type', ''))
+                        all_data['msg_content'].append(row.get('text', ''))
+                        all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
+                        all_data['msg_sent_time'].append(row.get('ts', ''))
+                        if 'blocks' in row and row['blocks']:
+                            block = row['blocks'][0]
+                            if 'elements' in block and block['elements']:
+                                element = block['elements'][0]
+                                if 'elements' in element and element['elements']:
+                                    all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
+                                else:
+                                    all_data['msg_dist_type'].append('reshared')
                             else:
                                 all_data['msg_dist_type'].append('reshared')
                         else:
                             all_data['msg_dist_type'].append('reshared')
-                    else:
-                        all_data['msg_dist_type'].append('reshared')
-                    all_data['time_thread_start'].append(row.get('thread_ts', 0))
-                    all_data['reply_users'].append(",".join(row.get('reply_users', [])))
-                    all_data['reply_count'].append(row.get('reply_count', 0))
-                    all_data['reply_users_count'].append(row.get('reply_users_count', 0))
-                    all_data['tm_thread_end'].append(row.get('latest_reply', 0))
-                    all_data['channel'].append(file_path.split('/')[-2])  # Extract channel from file path
+                        all_data['time_thread_start'].append(row.get('thread_ts', 0))
+                        all_data['reply_users'].append(",".join(row.get('reply_users', [])))
+                        all_data['reply_count'].append(row.get('reply_count', 0))
+                        all_data['reply_users_count'].append(row.get('reply_users_count', 0))
+                        all_data['tm_thread_end'].append(row.get('latest_reply', 0))
+                        all_data['channel'].append(file_path.split('/')[-2])  # Extract channel from file path
 
-        #create df from the extracted data
+        #create DataFrame from the extracted data
         df = pd.DataFrame(all_data)
         df = df[df['sender_name'] != 'Not provided'].reset_index(drop=True)
         
         return df
+
 
 
     def parse_slack_reaction(path, channel):
