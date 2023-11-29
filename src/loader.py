@@ -136,6 +136,7 @@ class SlackDataLoader:
     '''
 
     # combine all json file in all-weeks8-9
+    @staticmethod
     def slack_parser(paths):
         """Parse Slack data to extract useful information from JSON files."""
         
@@ -199,8 +200,8 @@ class SlackDataLoader:
         return df
 
 
-        #Parse slack data from every channel for training 
-
+    #parse slack data from every channel for training 
+    @staticmethod
     def slack_parser_all(parent_directory):
         """Parse Slack data from subdirectories to extract information from JSON files."""
         
@@ -266,8 +267,8 @@ class SlackDataLoader:
     def parse_slack_reaction(paths):
         combined_data = []
 
-        for path in paths:
-            for json_file in glob.glob(f"{path}/*.json"):
+        for path_channel in paths:
+            for json_file in glob.glob(f"{path_channel}/*.json"):
                 with open(json_file, 'r') as slack_data:
                     data = json.load(slack_data)
 
@@ -282,10 +283,10 @@ class SlackDataLoader:
 
                                 combined_data.append([reaction_name, reaction_count, len(reaction['users']), msg, user_id])
 
-        columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
-        df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
-        df_reaction['channel'] = [re.search(r'all-week\d', path).group() for _ in range(len(combined_data))]
-        return df_reaction
+            columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
+            df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
+            df_reaction['channel'] = [re.search(r'all-week\d', path_channel).group() for _ in range(len(combined_data))]
+            return df_reaction
 
 
         # for json_file in glob.glob(f"{path}*.json"):
@@ -319,6 +320,7 @@ class SlackDataLoader:
         
         # return df_reaction
 
+    @staticmethod
     def get_community_participation(path):
         """ specify path to get json files"""
         combined = []

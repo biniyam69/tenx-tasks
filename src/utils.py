@@ -26,6 +26,27 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text)
 
 
+def sentiment_analyzer(text):
+    from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+    sid = SentimentIntensityAnalyzer()
+    score = sid.polarity_scores(text)
+
+    positive = score['pos']
+    negative = score['neg']
+    neutral = score['neu']
+
+    if positive > negative and positive > neutral:
+        return 'positive'
+    elif negative > positive and negative > neutral:
+        return 'negative'
+    else: neutral > positive and neutral > negative:
+        return 'neutral'
+
+    
+
+    
+
 
 
 def break_combined_weeks(combined_weeks):
