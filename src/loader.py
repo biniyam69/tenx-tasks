@@ -199,6 +199,69 @@ class SlackDataLoader:
         return df
 
 
+        #Parse slack data from every channel for training 
+
+    def slack_parser_all(parent_directory):
+        """Parse Slack data from subdirectories to extract information from JSON files."""
+        
+        #initialize an empty list to store extracted data
+        all_data = {
+            'msg_type': [], 'msg_content': [], 'sender_name': [],
+            'msg_sent_time': [], 'msg_dist_type': [], 'time_thread_start': [],
+            'reply_count': [], 'reply_users_count': [], 'reply_users': [],
+            'tm_thread_end': [], 'channel': []
+        }
+
+        #traverse through the directory tree starting from the parent directory
+        for root, dirs, files in os.walk(parent_directory):
+            for file_name in files:
+                if file_name.endswith('.json'):
+                    file_path = os.path.join(root, file_name)
+                    with open(file_path, 'r', encoding="utf8") as file:
+                        json_data = json.load(file)
+
+                        for row in json_data:
+                            all_data['msg_type'].append(row.get('type', ''))
+                            all_data['msg_content'].append(row.get('text', ''))
+                            all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
+                            all_data['msg_sent_time'].append(row.get('ts', ''))
+                            if 'blocks' in row and row['blocks']:
+                                block = row['blocks'][0]
+                                if 'elements' in block and block['elements']:
+                                    element = block['elements'][0]
+                                    if 'elements' in element and element['elements']:
+                                        all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
+                                    else:
+                                        all_data['msg_dist_type'].append('reshared')
+                                else:
+                                    all_data['msg_dist_type'].append('reshared')
+                            else:
+                                all_data['msg_dist_type'].append('reshared')
+                            all_data['time_thread_start'].append(row.get('thread_ts', 0))
+                            all_data['reply_users'].append(",".join(row.get('reply_users', [])))
+                            all_data['reply_count'].append(row.get('reply_count', 0))
+                            all_data['reply_users_count'].append(row.get('reply_users_count', 0))
+                            all_data['tm_thread_end'].append(row.get('latest_reply', 0))
+                            all_data['channel'].append(os.path.basename(root))  # Extract channel from parent directory
+
+        #create a DataFrame from the extracted data
+        df = pd.DataFrame(all_data)
+        
+        #apply data cleaning and type conversions
+        df = df[df['sender_name'] != 'Not provided'].reset_index(drop=True)
+        df['msg_sent_time'] = pd.to_datetime(df['msg_sent_time'], unit='s')
+        df['time_thread_start'] = pd.to_datetime(df['time_thread_start'], unit='s')
+        df['tm_thread_end'] = pd.to_datetime(df['tm_thread_end'], unit='s')
+        df['reply_users'] = df['reply_users'].apply(lambda x: x.split(','))
+        df['reply_users_count'] = df['reply_users_count'].astype(int)
+        df['reply_count'] = df['reply_count'].astype(int)
+        df['msg_dist_type'] = df['msg_dist_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['msg_type'] = df['msg_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['sender_name'] = df['sender_name'].apply(lambda x: x.replace('_', ' ').title())
+        
+        return df
+
+
     @staticmethod
     def parse_slack_reaction(paths):
         combined_data = []

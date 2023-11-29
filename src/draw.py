@@ -1,16 +1,17 @@
-import os, sys
-import re
-import json
-import glob
 import datetime
+import glob
+import json
+import os
+import re
+import sys
 from collections import Counter
 
 import pandas as pd
-from matplotlib import pyplot as plt
 import seaborn as sns
-
+from matplotlib import pyplot as plt
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
+
 
 class Visualize():
     '''
@@ -32,7 +33,7 @@ class Visualize():
 
     @staticmethod
     def get_top_20_user(data, channel='Random'):
-    """get user with the highest number of message sent to any channel"""
+        """get user with the highest number of message sent to any channel"""
 
         data['sender_name'].value_counts()[:20].plot.bar(figsize=(15, 7.5))
         plt.title(f'Top 20 Message Senders in #{channel} channels', size=15, fontweight='bold')
