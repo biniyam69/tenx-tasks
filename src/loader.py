@@ -52,14 +52,12 @@ class SlackDataLoader:
         '''
         write a function to get all the users from the json file
         '''
-        
+
         with open(os.path.join(self.path, 'users.json'), 'r') as f:
             users = json.load(f)
-        
-        
-
 
         return users
+
     
     def get_channels(self):
         '''
@@ -185,34 +183,46 @@ class SlackDataLoader:
         #create DataFrame from the extracted data
         df = pd.DataFrame(all_data)
         df = df[df['sender_name'] != 'Not provided'].reset_index(drop=True)
+        columns = ['msg_type', 'msg_content', 'sender_name', 'msg_sent_time', 'msg_dist_type', 'time_thread_start', 'reply_count', 'reply_users_count', 'reply_users', 'tm_thread_end', 'channel']
+        df = df[columns]
+        df['msg_sent_time'] = pd.to_datetime(df['msg_sent_time'], unit='s')
+        df['time_thread_start'] = pd.to_datetime(df['time_thread_start'], unit='s')
+        df['tm_thread_end'] = pd.to_datetime(df['tm_thread_end'], unit='s')
+        df['reply_users'] = df['reply_users'].apply(lambda x: x.split(','))
+        df['reply_users_count'] = df['reply_users_count'].astype(int)
+        df['reply_count'] = df['reply_count'].astype(int)
+        df['msg_dist_type'] = df['msg_dist_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['msg_type'] = df['msg_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['sender_name'] = df['sender_name'].apply(lambda x: x.replace('_', ' ').title())
+        
         
         return df
 
 
     @staticmethod
-def parse_slack_reaction(paths):
-    combined_data = []
+    def parse_slack_reaction(paths):
+        combined_data = []
 
-    for path in paths:
-        for json_file in glob.glob(f"{path}/*.json"):
-            with open(json_file, 'r') as slack_data:
-                data = json.load(slack_data)
+        for path in paths:
+            for json_file in glob.glob(f"{path}/*.json"):
+                with open(json_file, 'r') as slack_data:
+                    data = json.load(slack_data)
 
-                for item in data:
-                    if 'reactions' in item:
-                        for reaction in item['reactions']:
-                            msg = item.get('text', '')
-                            user_id = item.get('user', '')
-                            reaction_name = reaction['name']
-                            reaction_count = reaction['count']
-                            reaction_users = ",".join(reaction['users'])
+                    for item in data:
+                        if 'reactions' in item:
+                            for reaction in item['reactions']:
+                                msg = item.get('text', '')
+                                user_id = item.get('user', '')
+                                reaction_name = reaction['name']
+                                reaction_count = reaction['count']
+                                reaction_users = ",".join(reaction['users'])
 
-                            combined_data.append([reaction_name, reaction_count, len(reaction['users']), msg, user_id])
+                                combined_data.append([reaction_name, reaction_count, len(reaction['users']), msg, user_id])
 
-    columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
-    df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
-    df_reaction['channel'] = [re.search(r'all-week\d', path).group() for _ in range(len(combined_data))]
-    return df_reaction
+        columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
+        df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
+        df_reaction['channel'] = [re.search(r'all-week\d', path).group() for _ in range(len(combined_data))]
+        return df_reaction
 
 
         # for json_file in glob.glob(f"{path}*.json"):
