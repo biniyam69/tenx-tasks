@@ -204,8 +204,6 @@ class SlackDataLoader:
     @staticmethod
     def slack_parser_all(parent_directory):
         """Parse Slack data from subdirectories to extract information from JSON files."""
-        
-        #initialize an empty list to store extracted data
         all_data = {
             'msg_type': [], 'msg_content': [], 'sender_name': [],
             'msg_sent_time': [], 'msg_dist_type': [], 'time_thread_start': [],
@@ -213,37 +211,42 @@ class SlackDataLoader:
             'tm_thread_end': [], 'channel': []
         }
 
-        #traverse through the directory tree starting from the parent directory
+        # Traverse through the directory tree starting from the parent directory
         for root, dirs, files in os.walk(parent_directory):
             for file_name in files:
                 if file_name.endswith('.json'):
                     file_path = os.path.join(root, file_name)
                     with open(file_path, 'r', encoding="utf8") as file:
-                        json_data = json.load(file)
+                        try:
+                            json_data = json.load(file)
 
-                        for row in json_data:
-                            all_data['msg_type'].append(row.get('type', ''))
-                            all_data['msg_content'].append(row.get('text', ''))
-                            all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
-                            all_data['msg_sent_time'].append(row.get('ts', ''))
-                            if 'blocks' in row and row['blocks']:
-                                block = row['blocks'][0]
-                                if 'elements' in block and block['elements']:
-                                    element = block['elements'][0]
-                                    if 'elements' in element and element['elements']:
-                                        all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
-                                    else:
-                                        all_data['msg_dist_type'].append('reshared')
-                                else:
-                                    all_data['msg_dist_type'].append('reshared')
-                            else:
-                                all_data['msg_dist_type'].append('reshared')
-                            all_data['time_thread_start'].append(row.get('thread_ts', 0))
-                            all_data['reply_users'].append(",".join(row.get('reply_users', [])))
-                            all_data['reply_count'].append(row.get('reply_count', 0))
-                            all_data['reply_users_count'].append(row.get('reply_users_count', 0))
-                            all_data['tm_thread_end'].append(row.get('latest_reply', 0))
-                            all_data['channel'].append(os.path.basename(root))  # Extract channel from parent directory
+                            if isinstance(json_data, list):  # Assuming each file contains a list of dictionaries
+                                for row in json_data:
+                                    if isinstance(row, dict):
+                                        all_data['msg_type'].append(row.get('type', ''))
+                                        all_data['msg_content'].append(row.get('text', ''))
+                                        all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
+                                        all_data['msg_sent_time'].append(row.get('ts', ''))
+                                        if 'blocks' in row and row['blocks']:
+                                            block = row['blocks'][0]
+                                            if 'elements' in block and block['elements']:
+                                                element = block['elements'][0]
+                                                if 'elements' in element and element['elements']:
+                                                    all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
+                                                else:
+                                                    all_data['msg_dist_type'].append('reshared')
+                                            else:
+                                                all_data['msg_dist_type'].append('reshared')
+                                        else:
+                                            all_data['msg_dist_type'].append('reshared')
+                                        all_data['time_thread_start'].append(row.get('thread_ts', 0))
+                                        all_data['reply_users'].append(",".join(row.get('reply_users', [])))
+                                        all_data['reply_count'].append(row.get('reply_count', 0))
+                                        all_data['reply_users_count'].append(row.get('reply_users_count', 0))
+                                        all_data['tm_thread_end'].append(row.get('latest_reply', 0))
+                                        all_data['channel'].append(file_path.split('/')[-2])
+                        except json.JSONDecodeError as e:
+                            print(f"Error decoding JSON in file: {file_path}. Error: {e}")
 
         #create a DataFrame from the extracted data
         df = pd.DataFrame(all_data)

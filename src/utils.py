@@ -26,7 +26,8 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text)
 
 
-def sentiment_analyzer(text):
+def sentiment(text):
+
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
     sid = SentimentIntensityAnalyzer()
@@ -40,8 +41,7 @@ def sentiment_analyzer(text):
         return 'positive'
     elif negative > positive and negative > neutral:
         return 'negative'
-    else: neutral > positive and neutral > negative:
-        return 'neutral'
+    else: return 'neutral'
 
     
 
