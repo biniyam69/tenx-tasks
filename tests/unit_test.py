@@ -1,16 +1,16 @@
+import os
+import sys
+
 import pytest
-import loader module
-import sys, os
-import modules from src
-import package/module from src
 
 rpath = os.path.abspath('..')
 if rpath not in sys.path:
     sys.path.insert(0, rpath)
 
-from src.loader import SlackDataLoader
-from src.draw import Visualize
 import src.utils as utils
+from src.draw import Visualize
+from src.loader import SlackDataLoader
+
 
 def test_parse_slack_reaction():
     path_channel = "/home/biniyam/tenx-tasks/tenxdata/"

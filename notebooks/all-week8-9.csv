@@ -1,0 +1,283 @@
+msg_type,msg_content,sender_name,msg_sent_time,msg_dist_type,time_thread_start,reply_count,reply_users_count,reply_users,tm_thread_end,channel
+Message,<https://youtu.be/zoKn4qk4mac>,Kelly Soto,2022-10-15 12:45:52,Link,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<!channel> Daily standup has started,Garrett Bell,2022-10-11 08:04:16,Broadcast,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"website from the current session (database design):
+<https://dbdiagram.io/home>",Brian Odom,2022-10-11 12:11:44,Text,2022-10-11 12:11:44,1,1,['U03UG0SFHGT'],2022-10-11 12:18:08,all-week8
+Message,Thank you <@U03UJKJGRAQ>,Willie Yang,2022-10-11 12:18:08,Text,2022-10-11 12:11:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,can i get a recorded tutorial of today’s  back testing?,Nancy Craig,2022-10-11 15:23:44,Text,2022-10-11 15:23:44,8,5,"['U03V6HMRPGQ', 'U03UG1Z21JP', 'U03UG5VFN03', 'U03TEPYRM2P', 'U03UAKATQ22']",2022-10-12 07:06:40,all-week8
+Message,<@U03TEPYRM2P> can we ?,Cristian Wilson,2022-10-11 15:30:08,User,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,I joined late due to internet issues. I would love to have the record as soon as possible <@U03TEPYRM2P>,Jennifer Foley,2022-10-11 15:42:56,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,I was ateneded but I need some part of it,Nancy Craig,2022-10-11 15:45:04,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Sure! The upload is in progress,Garrett Bell,2022-10-11 16:06:24,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Thank you so much,Nancy Craig,2022-10-11 16:06:24,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"During reading I witness a term (Security) in most of the provided docs, can anyone explain it?",Cristian Wilson,2022-10-11 16:27:44,Text,2022-10-11 16:27:44,7,5,"['U03V5Q9N516', 'U03UG4Q7V42', 'U03UD68RQH3', 'U03V6HMRPGQ', 'U03UVHCV6KB']",2022-10-11 17:01:52,all-week8
+Message,I think it is associated with the success of the trading!,Debra Lawrence,2022-10-11 16:29:52,Text,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,it is something that has monetary value and which can be traded on the market.,Phillip Atkins,2022-10-11 16:32:00,Text,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"don't confuse it with it's literal meaning, <@U03UG4Q7V42> defined it well... it could be gold, Real states, stocks etc..",Brady Rhodes,2022-10-11 16:46:56,Text,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,so it is a financial term referring to a commodity ?,Cristian Wilson,2022-10-11 16:59:44,Text,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<@U03V6HMRPGQ> yeah,Brady Rhodes,2022-10-11 17:01:52,User,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Thank you all for the answers,Cristian Wilson,2022-10-11 17:01:52,Text,2022-10-11 16:27:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,What should be the date range of the data we will be downloading?,Michelle Lewis,2022-10-11 18:42:08,Text,2022-10-11 18:42:08,1,1,['U03UJN29Y4C'],2022-10-11 21:43:28,all-week8
+Message,Thanks again I got it,Nancy Craig,2022-10-11 18:42:08,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<@U03TEPYRM2P> The uploaded file has only 360p quality. Is there a way to upgrade it?,Gary Thomas,2022-10-11 21:07:12,User,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"Hey <!channel> your RDS postgres databases are ready and you can access them from your EC2 instances
+
+You can connect using
+`psql --host <http://melachallengedatabase.crlafpfc5g5y.us-east-1.rds.amazonaws.com|melachallengedatabase.crlafpfc5g5y.us-east-1.rds.amazonaws.com> --port 5432 --username groupNameuser --password --dbname groupNamedb`
+
+substitute groupName with all lowercase versions of your group name
+
+example connection:
+`psql --host <http://melachallengedatabase.crlafpfc5g5y.us-east-1.rds.amazonaws.com|melachallengedatabase.crlafpfc5g5y.us-east-1.rds.amazonaws.com> --port 5432 --username changuser --password --dbname changdb`
+
+Password for all groups is _groupNamepass_ example - _changpass_
+
+Exceptions to this are group 4. group 4 will use yvonne (first name) as the group name instead of Choquet-Bruhat
+
+Use this thread if you're facing problems connecting",Mandy Sweeney,2022-10-11 21:30:40,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<@U03UKL27B0R>,Michelle Lewis,2022-10-11 21:43:28,User,2022-10-11 18:42:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"hi <@U03TEPYRM2P>, i know today's tutorial session just ended but could we have it uploaded really soon?",Elizabeth Hall,2022-10-13 14:24:00,Text,2022-10-13 14:24:00,1,1,['U03TEPYRM2P'],2022-10-13 14:38:56,all-week8
+Message,<!here> can someone send me the docker-compose file for Kafka connector,Travis Butler,2022-10-13 14:26:08,Broadcast,2022-10-13 14:26:08,2,1,['U03UKL27B0R'],2022-10-13 18:05:52,all-week8
+Message,sure - it will be uploaded as soon as possible,Garrett Bell,2022-10-13 14:38:56,Text,2022-10-13 14:24:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<https://www.youtube.com/watch?v=uZnp21fu8TQ>,Jennifer Foley,2022-10-13 17:18:56,Link,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<https://github.com/confluentinc/cp-docker-images>,Brittany Garcia,2022-10-13 18:05:52,Link,2022-10-13 14:26:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,This is the official docker image of conlfuent. You can find the distributed &amp; standalone mode for running the entire kafka setup,Brittany Garcia,2022-10-13 18:05:52,Text,2022-10-13 14:26:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,can any one help me how to define dates in PostgreSQL shcema ?,Cristian Wilson,2022-10-13 19:20:32,Text,2022-10-13 19:20:32,3,2,"['U03UVHCV6KB', 'U03V6HMRPGQ']",2022-10-14 07:02:24,all-week8
+Message,"```DROP TABLE IF EXISTS employees;
+
+CREATE TABLE employees (
+	employee_id serial PRIMARY KEY,
+	first_name VARCHAR (255),
+	last_name VARCHAR (355),
+	birth_date DATE NOT NULL,
+	hire_date DATE NOT NULL
+);
+
+INSERT INTO employees (first_name, last_name, birth_date, hire_date)
+VALUES ('Shannon','Freeman','1980-01-01','2005-01-01'),
+	   ('Sheila','Wells','1978-02-05','2003-01-01'),
+	   ('Ethel','Webb','1975-01-01','2001-01-01');```",Travis Butler,2022-10-13 19:33:20,Text,2022-10-13 19:20:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"this can be a good start, for more detailed explanation refer this link <https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-date/>",Travis Butler,2022-10-13 19:33:20,Text,2022-10-13 19:20:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"That is the maximum quality we received from Google. However, you can check your network ",Garrett Bell,2022-10-12 07:06:40,Text,2022-10-11 15:23:44,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,didn’t see this when I posted the same thing below :wink:,Eric Myers,2022-10-12 09:55:12,Text,2022-10-12 09:14:40,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,When is the second tutorial scheduled for today,Daniel Brown,2022-10-12 13:22:08,Text,2022-10-12 13:22:08,6,4,"['U03UVHCV6KB', 'U03UD68RQH3', 'U03UG0YHAUT', 'U03TEPYRM2P']",2022-10-12 13:28:32,all-week8
+Message,has been postponed to tomorrow,Travis Butler,2022-10-12 13:24:16,Text,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<https://10academybatch6.slack.com/archives/C03U4J8J4LQ/p1665561498734959>,Travis Butler,2022-10-12 13:24:16,Link,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,it's re-scheduled to tomorrow 9:30 AM UTC,Brady Rhodes,2022-10-12 13:24:16,Text,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,:pray: <@U03UVHCV6KB>,Daniel Brown,2022-10-12 13:24:16,Emoji,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,:pray: <@U03UD68RQH3>,Daniel Brown,2022-10-12 13:26:24,Emoji,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,1pm UTC tomorrow please ,Garrett Bell,2022-10-12 13:28:32,Text,2022-10-12 13:22:08,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Good morning everyone :blush: welcome to week 8 of 12.  Wishing you all a productive week ahead ,Garrett Bell,2022-10-10 07:08:48,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Good morning!,Carlos Gross,2022-10-10 07:08:48,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Good Morning.,Samuel King,2022-10-10 07:08:48,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Good Morning!!!,Daniel Brown,2022-10-10 07:34:24,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Good Morning.,Willie Yang,2022-10-10 07:49:20,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"Good morning all, Monday music on standup link, join now to vibe with me",Vanessa Norman,2022-10-10 07:55:44,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"How do We get the k-line data guys? there are too many varieties,",Joshua Rhodes,2022-10-10 10:01:36,Text,2022-10-10 10:01:36,1,1,['U03UG4Q7V42'],2022-10-10 18:20:48,all-week8
+Message,"You can find the updated list of quake books from week 7 hot seaters here.
+
+<https://www.notion.so/Quake-books-1a622f5c9a1f4a418126fcc4ce05aa01>",Travis Butler,2022-10-10 10:59:12,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Has the session ended? I lost connection and I cannot rejoin.,Brian Odom,2022-10-10 14:30:24,Text,2022-10-10 14:30:24,3,3,"['U03V61VGQG0', 'U03TEPYRM2P', 'U03UJKJGRAQ']",2022-10-10 14:32:32,all-week8
+Message,yes it has ended.,Paula Bryant,2022-10-10 14:30:24,Text,2022-10-10 14:30:24,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,yes,Garrett Bell,2022-10-10 14:30:24,Text,2022-10-10 14:30:24,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Ok .. so I missed only a couple of minutes.,Brian Odom,2022-10-10 14:32:32,Text,2022-10-10 14:30:24,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"hi, i just want to confirm that the submission dates on this week's challenge document are correct?
+• interim submission - *tuesday* 11th oct at 8pm utc (vs wednesday)
+• final submission - *thursday* 13th oct at 8pm utc (vs saturday)",Elizabeth Hall,2022-10-10 14:32:32,Text,2022-10-10 14:32:32,3,3,"['U03TEPYRM2P', 'U03UP7V9Q57', 'U03UD5B7C3X']",2022-10-10 15:08:48,all-week8
+Message,Thank you for spoting that Wangui. Let me confirm that from the tutors,Garrett Bell,2022-10-10 14:34:40,Text,2022-10-10 14:32:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"<@U03UUN8M4RX> In answering my question you said ""if you transported yourself to the past..""
+if I did transport myself to the past, I would told everyone how I invented time-travel and all the markets would have crashed. :smile:",Brian Odom,2022-10-10 14:38:56,User,2022-10-10 14:38:56,2,2,"['U03UD68RQH3', 'U03UJKJGRAQ']",2022-10-10 17:06:08,all-week8
+Message,Updated back to Wednesday and Saturday,Michele Sparks,2022-10-10 15:02:24,Text,2022-10-10 14:32:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,nice. thank you!,Elizabeth Hall,2022-10-10 15:08:48,Text,2022-10-10 14:32:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,With great power comes great responsibility so use it wisely :smile:,Brady Rhodes,2022-10-10 16:55:28,Text,2022-10-10 14:38:56,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,that's true <@U03UD68RQH3> I will keep  that in mind when I time-travel next time :laughing:,Brian Odom,2022-10-10 17:06:08,Text,2022-10-10 14:38:56,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"""Integration of backtesting framework""
+
+This is the one of the Wednesday deliverables under the Github link submission.
+
+Is this referring to the models?",Michelle Lewis,2022-10-10 17:36:00,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"Are we supposed to create our own backtesting algorithm or we are going to use one out of the ones provided (<https://backtrader.com/docu/|backtrader>, <https://vectorbt.dev/|vectorbt>, or <https://www.freqtrade.io/en/stable/backtesting/|freqtrade>)?",Michelle Lewis,2022-10-10 17:48:48,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"• Create a dynamic scene (simple json or ini file) that automates the run of backtests by taking in parameters
+    ◦ Date range (start and end date for backtest)
+    ◦ *Indicator*
+    ◦ Indicator params range
+Does ""indicator"" in the above sentence means a variable in the in the dataset?",Michelle Lewis,2022-10-10 17:59:28,Rich Text Section,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Have you gotten an answer for this <@U03U1FNPEUX>?,Phillip Atkins,2022-10-10 18:20:48,Text,2022-10-10 10:01:36,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"when cloning a repo, what's the difference between using git@gitrepolink and gitrepolink when cloning repo?",Michelle Lewis,2022-10-10 20:33:04,Text,2022-10-10 20:33:04,6,3,"['U03U1FNPEUX', 'U03UJN29Y4C', 'U03UD68RQH3']",2022-10-11 05:52:00,all-week8
+Message,can you clarify?,Joshua Rhodes,2022-10-10 20:43:44,Text,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,the first is .git the second is .html,Michelle Lewis,2022-10-10 20:54:24,Text,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,are you referring https vs ssh?,Brady Rhodes,2022-10-10 21:54:08,Text,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,u mean <https://github.com/> vs <mailto:git@github.com|git@github.com> ?,Brady Rhodes,2022-10-10 21:56:16,Text,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,If so the difference lies in what your asked as credintials. the first one requires you to provide your ssh public key. And the latter uses your (github) username and PW,Joshua Rhodes,2022-10-10 23:00:16,Text,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,```pip install matplotlib==3.2.2```,Amy Leon,2022-10-11 00:19:12,Text,2022-10-11 00:17:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,This have several aftermaths it does not get the error fixed,Daniel Brown,2022-10-11 00:27:44,Text,2022-10-11 00:17:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"```sudo apt-get install libfreetype6-dev
+sudo apt-get install pkg-config
+sudo apt-get install libpng-dev
+sudo apt-get install pkg-config```",Amy Leon,2022-10-11 00:29:52,Text,2022-10-11 00:17:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,Try installing these packages,Amy Leon,2022-10-11 00:29:52,Text,2022-10-11 00:17:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<@U03U1FNPEUX> Thank you,Michelle Lewis,2022-10-11 05:52:00,User,2022-10-10 20:33:04,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"Always there <@U03UVHCV6KB> :pray:,thank you",Cristian Wilson,2022-10-14 07:02:24,Text,2022-10-13 19:20:32,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"Kindly find the updated list of quake books, updated with week 8 hot seaters.
+<https://www.notion.so/Quake-books-1a622f5c9a1f4a418126fcc4ce05aa01>",Travis Butler,2022-10-14 10:54:56,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,can I get the link of session,Cristian Wilson,2022-10-14 14:02:40,Text,2022-10-14 14:02:40,1,1,['U03UFV7HFNF'],2022-10-14 14:02:40,all-week8
+Message,<https://meet.google.com/ysb-kjdn-hpp>,Judith Bolton,2022-10-14 14:02:40,Link,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,<http://meet.google.com/ysb-kjdn-hpp|http://meet.google.com/ysb-kjdn-hpp>,Miguel Herring,2022-10-14 14:02:40,Link,2022-10-14 14:02:40,0,0,[''],1970-01-01 00:00:00,all-week8
+Message,"<@U03UJGP0C68> <@U03UUR571A5> <@U03V785NLSU> presented to Olutosin and killed it.  He was super impressed.
+
+Big congrats to all of you guys.",Katherine Foster,2022-10-28 13:13:36,User,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03TX2VN6H5> @challenge document what is the difference between interim submission and final submissions in the presentation and report writing part?,Nancy Craig,2022-10-20 07:49:20,User,2022-10-20 07:49:20,2,2,"['U03TEPYRM2P', 'U03UG5VFN03']",2022-10-20 08:02:08,all-week9
+Message,how have you separated trip origin? it has two variables inside,Jennifer Foley,2022-10-20 07:49:20,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,please check the *'leaderboard of the week*' section on the challenge document. You will find the required expectations of both interim and final submission.,Garrett Bell,2022-10-20 07:55:44,Text,2022-10-20 07:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"okay , thanks",Nancy Craig,2022-10-20 08:02:08,Text,2022-10-20 07:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"<@U03UG1Z21JP> If you want to split it to an additional column you can use
+```df['Trip_Origin_lat'] = df['Trip Origin'].apply(lambda x: str(x).split(',')[0])
+df['Trip_Origin_lng'] = df['Trip Origin'].apply(lambda x: str(x).split(',')[1])```",Amy Leon,2022-10-20 08:10:40,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UJGP0C68> thank you so much.,Jennifer Foley,2022-10-20 08:12:48,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UJGP0C68> I dont understand what you said about merging the two tables. could you clarify a bit here?,Jennifer Foley,2022-10-20 08:23:28,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Super, got a lot without doing any form of analysis. Really helpful in reframing my (hopefully all of our) approach to the analysis phase of the data.",Travis Butler,2022-10-20 08:32:00,Text,2022-10-20 05:32:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"So basically <@U03UG1Z21JP>, what he said was, on the second table you are going to find repeating order id's. But when you look at the 'drivers_actions' feature of the repeating order id's you will find only one accepted row even if you have several reject one's",Travis Butler,2022-10-20 08:44:48,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UVHCV6KB> Thank you,Jennifer Foley,2022-10-20 09:18:56,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,What did you understand that perhaps you didn't understand before <@U03UVHCV6KB>?,Katherine Foster,2022-10-20 09:40:16,Text,2022-10-20 05:32:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Hello guys.. I think the trip_id is actually the order_id in the second table right? Just want to confirm,Brenda Hernandez,2022-10-20 11:03:28,Text,2022-10-20 11:03:28,2,2,"['U03UUR571A5', 'U03UG1Z21JP']",2022-10-20 11:16:16,all-week9
+Message,Yes <@U03UH397319>,Amy Leon,2022-10-20 11:03:28,Text,2022-10-20 11:03:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,What I was trying to say was that I understood lots about the data prior to doing any analysis on the data.,Travis Butler,2022-10-20 11:07:44,Text,2022-10-20 05:32:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Like the scope of the data, what types of things have been kept and which one's are given to us, some bit amount of the actual business and what it is that they are really doing, and importantly what they want to gain from us, in terms of qualitative percentage of order increase and delivery optimizations, and about other personal and related types of data they have been collecting and how they were planning on using that for their advantage.",Travis Butler,2022-10-20 11:12:00,Text,2022-10-20 05:32:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,you are right <@U03UH397319>,Jennifer Foley,2022-10-20 11:16:16,Text,2022-10-20 11:03:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,I guess this will result to a one to many merge,Michelle Lewis,2022-10-20 17:10:24,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,yeah!,Kelly Soto,2022-10-20 17:12:32,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Hi, I cannot render some graphs on my Github but I can see them on my local notebook, is there a fix for this?",Ashley Hamilton,2022-10-20 19:01:20,Text,2022-10-20 19:01:20,1,1,['U03UVHCV6KB'],2022-10-20 19:07:44,all-week9
+Message,"putting it as an image is one option, but not a satisfying one I know",Travis Butler,2022-10-20 19:07:44,Text,2022-10-20 19:01:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,on the delivery_request data we have `lat` and `lng` values....that doesn't match to the  location values to the nb.csv dataset (when merging on `order_id = trip_id`) so does that mean we also have the drivers/pilots location in addition to the trip origin location?,Judith Bolton,2022-10-20 19:16:16,Text,2022-10-20 19:16:16,5,4,"['U03UUR571A5', 'U03UJGP0C68', 'U03UJN29Y4C', 'U03UG5VFN03']",2022-10-21 07:04:32,all-week9
+Message,"Yes, I think drivers location shows where the driver was located at broadcast time( or while rejecting or accepting the trip)",Amy Leon,2022-10-20 20:05:20,Text,2022-10-20 19:16:16,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,one more question....how about this case? there are many trip_id values in the completed orders data that I cannot find in the delivery_request data...how is that possible?,Judith Bolton,2022-10-20 21:07:12,Text,2022-10-20 19:16:16,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,I was thinking about how to handle that issue too. May be just considering the trips that have driver_action associated with them. But am not really sure yet,Amy Leon,2022-10-20 21:15:44,Text,2022-10-20 19:16:16,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,I'm sticking with the trips that have delivery request associated with them cos there i can only do that much with the trips dataset other than find the time it takes to complete the trip and where orders are coming from.,Michelle Lewis,2022-10-21 05:22:08,Text,2022-10-20 19:16:16,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,is all accepted trip delivered or fullfilled?,Nancy Craig,2022-10-21 07:04:32,Text,2022-10-20 19:16:16,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,is all accepted trip delivered or fullfilled?,Nancy Craig,2022-10-21 07:04:32,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,does rejected trip has a relation with fulfillment and unfulfillment of the trip,Nancy Craig,2022-10-21 07:08:48,Text,2022-10-21 07:08:48,2,2,"['U03UJH1EQQL', 'U03UG5VFN03']",2022-10-21 07:13:04,all-week9
+Message,"as per my understanding, if it is accepted status it is fulfillment of the request and if it is rejected it is unfulfillment of the request. so finally we can measure the fulfillment based on the driver actions later in the casual graph and model.",Kelly Soto,2022-10-21 07:13:04,Text,2022-10-21 07:08:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,thanks,Nancy Craig,2022-10-21 07:13:04,Text,2022-10-21 07:08:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Isn't it more fun to work with real data than with Titanic data?,Katherine Foster,2022-10-21 07:38:40,Text,2022-10-21 07:38:40,1,1,['U03UJN29Y4C'],2022-10-21 07:57:52,all-week9
+Message,Of course it is.,Michelle Lewis,2022-10-21 07:57:52,Text,2022-10-21 07:38:40,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,which method of iterating through pandas dataframe is less time consuming please? trying to calculate distance but it is taking forever,Michelle Lewis,2022-10-21 08:00:00,Text,2022-10-21 08:00:00,4,2,"['U03UUR571A5', 'U03UJN29Y4C']",2022-10-21 14:36:48,all-week9
+Message,"```from geopy import distance
+
+start_coordinates = df_trip['Trip Origin'].tolist()
+end_coordinates = df_trip['Trip Destination'].tolist()
+
+def calculate_distances(self, starting_coordinates, ending_coordinates):
+        calculated_distances = []
+        for i in range(len(starting_coordinates)):
+            val = str(starting_coordinates[i]).split(',')
+            starting_tuple = (val[0], val[1])
+            val_end = str(ending_coordinates[i]).split(',')
+            ending_tuple = (val_end[0], val_end[1])
+            calculated_distances.append(distance.distance(starting_tuple, ending_tuple).km)
+        return calculated_distances
+
+df_trip['distance'] = calculate_distances(start_coordinates, end_coordinates)```",Amy Leon,2022-10-21 08:06:24,Text,2022-10-21 08:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,in the data/table we do not have the time at which the order was created right? how are we going to extract the day and hour?  we can extract it from the trip_start_time but that is not going to represent the time at the order created because the trip my happen days after the order. What do you guys suggest?,Katie Dickerson,2022-10-21 08:27:44,Text,2022-10-21 08:27:44,1,1,['U03UUR571A5'],2022-10-21 08:29:52,all-week9
+Message,"If we can assure all the orders are not scheduled, trip_start_time would be closer to the created one.",Amy Leon,2022-10-21 08:29:52,Text,2022-10-21 08:27:44,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Just an update on the data from Gokada CEO Olutosin
+
+a)
+nb.csv contains 535k orders created in the span of 6 months from July 2021 - December 2021
+driver_locations_during_request.csv contains driver order requests and the location of the driver during the request for each order in the nb.csv (Trip ID). Since this is a very data intensive task we calculated it only for one month.
+driver_locations_during_request.csv#order_id == nb.csv#trip_id
+
+
+b)
+We can easily stipulate for now based on the orders created_at to get a sense of when the drivers got the order for this analysis, if we need precise timestamps we will need to recalculate the datasets for the first month again.",Eric Myers,2022-10-21 08:34:08,Text,2022-10-21 08:34:08,1,1,['U03UD68RQH3'],2022-10-21 15:28:00,all-week9
+Message,"<!channel>, Yabebal just joined the session after we ended it and is holding an open floor for discussion on the challenge. Join back in if you have questions you'd like answered",Michele Sparks,2022-10-21 08:40:32,Broadcast,2022-10-21 08:40:32,3,3,"['U03UG4Q7V42', 'U03U1HAG9TR', 'U03UP7V9Q57']",2022-10-21 09:01:52,all-week9
+Message,Will it be recorded? Power is out here:pray:,Phillip Atkins,2022-10-21 08:42:40,Text,2022-10-21 08:40:32,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Thanks for the update <@U03UP7V9Q57>,Robert Carter,2022-10-21 08:44:48,Text,2022-10-21 08:40:32,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"<@U03UG4Q7V42>, unfortunately the session has not been recorded",Michele Sparks,2022-10-21 09:01:52,User,2022-10-21 08:40:32,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"<!here>, I was not online on slack, and for som of us who did not attend the Yabebals talk today, can someone please at least try to summarize the main things he covered",Travis Butler,2022-10-21 09:06:08,Broadcast,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"sorry to hear that <@U03UJGP0C68>, hope it's get better",Cristian Wilson,2022-10-21 13:24:16,Text,2022-10-19 15:38:40,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Thank you *Nat,* I kinda know where the problem is now. I was trying to find the driving distance which required sending an http request to OSRM which is why its taking such a long time to load.",Michelle Lewis,2022-10-21 14:34:40,Text,2022-10-21 08:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"`t_origin_long = df3['trip_origin_long'].tolist()`
+`t_origin_lat = df3['trip_origin_lat'].tolist()`
+`t_dest_long = df3['trip_dest_long'].tolist()`
+`t_dest_lat = df3['trip_dest_lat'].tolist()`
+
+`trip_distance = []`
+`optimal_duration = []`
+
+`lenght = len(t_origin_long)`
+`for i in range(lenght):`
+  `r = requests.get(f""""""<http://router.project-osrm.org/route/v1/car/{t_origin_long[i]},{t_origin_lat[i]};{t_dest_long[i]},{t_dest_lat[i]}?overview=false>"""""")`
+  `route_1 = json.loads(r.content)[""routes""][0]`
+  `trip_distance.append(route_1[""distance""])`
+  `optimal_duration.append(route_1[""duration""])`",Michelle Lewis,2022-10-21 14:36:48,Text,2022-10-21 08:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,I gonna go with the geospatial distance i guess,Michelle Lewis,2022-10-21 14:36:48,Text,2022-10-21 08:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,b) says that we can use created_at timestamp to know when the order got created but all of created_at and updated_at filed of the csv are null. <@U03UUN8M4RX>,Brady Rhodes,2022-10-21 15:28:00,Text,2022-10-21 08:34:08,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Switch your latitude to be longitude and longitude latitude,Ashley Hamilton,2022-10-21 20:33:04,Text,2022-10-21 19:05:36,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"How can I split the two columns trip origin and trip destination into four, trip_origin_x, trip_origin_y and trip_destination_x and trip_destination_y?",Ashley Hamilton,2022-10-22 00:21:20,Text,2022-10-22 00:21:20,2,2,"['U03UJGP0C68', 'U03V785NLSU']",2022-10-22 14:04:48,all-week9
+Message,"<@U03UUR571A5> has explained it here and it works
+
+<https://10academybatch6.slack.com/archives/C047EE54HPS/p1666253462938469?thread_ts=1666210433.816259&amp;channel=C047EE54HPS&amp;message_ts=1666253462.938469|https://10academybatch6.slack.com/archives/C047EE54HPS/p1666253462938469?thread_ts=1666210433.816259&amp;channel=C047EE54HPS&amp;message_ts=1666253462.938469>",Judith Bolton,2022-10-22 04:07:28,User,2022-10-22 00:21:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Thank you, I'd try that",Michelle Lewis,2022-10-22 06:02:40,Text,2022-10-21 19:05:36,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Hey <@U03UJGP0C68> try this
+pip install causalnex==0.11.0",Daniel Brown,2022-10-22 06:11:12,Text,2022-10-22 06:11:12,11,3,"['U03UJGP0C68', 'U03UJH1EQQL', 'U03U1FNPEUX']",2022-10-22 08:08:32,all-week9
+Message,Oh ok thanks man…let me try it,Judith Bolton,2022-10-22 06:13:20,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,still the same error though,Judith Bolton,2022-10-22 06:19:44,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,i use to install based on the guide on the official site using conda environment.,Kelly Soto,2022-10-22 06:32:32,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,i meant creating new environment for it!,Kelly Soto,2022-10-22 06:34:40,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,i used conda environment but no success,Judith Bolton,2022-10-22 06:56:00,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,could you share the guide please,Judith Bolton,2022-10-22 06:56:00,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<https://causalnex.readthedocs.io/en/latest/02_getting_started/01_prerequisites.html#using-conda>,Kelly Soto,2022-10-22 06:58:08,Link,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03U1FNPEUX> torch             1.12.1,Travis Butler,2022-10-23 08:32:00,User,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,what is the python version you used to create the virtual environments in which you also installed causalnex? <@U03U1FNPEUX> <@U03UJGP0C68> <@U03UUR571A5>,Travis Butler,2022-10-23 09:18:56,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,3.8,Judith Bolton,2022-10-23 10:03:44,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Thank you, my python version was 3.10",Travis Butler,2022-10-23 10:42:08,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<https://realpython.com/linear-programming-python/|Hands-On Linear Programming: Optimization With Python – Real Python>,Kelly Soto,2022-10-23 16:57:36,Link,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<https://stackoverflow.com/questions/70941094/how-to-get-the-distance-between-two-geographic-coordinates-of-two-different-data>,Joshua Rhodes,2022-10-23 19:12:00,Link,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,What is atplotlib man?,Joshua Rhodes,2022-10-22 07:10:56,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Is matplotlib installed?,Joshua Rhodes,2022-10-22 07:10:56,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"pip install ""causalnex[all]""",Joshua Rhodes,2022-10-22 07:13:04,Text,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UJH1EQQL> thank you very much it's working now,Judith Bolton,2022-10-22 08:08:32,User,2022-10-22 06:11:12,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Can anyone tell me what we have to deliver today?,Samuel King,2022-10-22 11:16:16,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UUMR26Q1> submission is for tomorrow,Katie Dickerson,2022-10-22 11:16:16,User,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,what about career exercise?,Samuel King,2022-10-22 11:18:24,Text,2022-10-22 11:18:24,6,2,"['U03UG32J3PC', 'U03UUMR26Q1']",2022-10-22 15:36:32,all-week9
+Message,I have never seen anything on the classroom,April Lucas,2022-10-22 11:18:24,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,do you mean no any submission today?,Samuel King,2022-10-22 11:20:32,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Yes,April Lucas,2022-10-22 11:20:32,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Thank You.,Samuel King,2022-10-22 11:20:32,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Thanks.,Ashley Hamilton,2022-10-22 14:04:48,Text,2022-10-22 00:21:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,The challenge document says today is submission day for 10 Academy profile and cv too.,Ashley Hamilton,2022-10-22 14:21:52,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UL5LSTG9> <@U03TT5KEYCF> <@U03U4GULU3Y>,Ashley Hamilton,2022-10-22 14:21:52,User,2022-10-22 14:21:52,1,1,['U03U4GULU3Y'],2022-10-22 16:21:20,all-week9
+Message,The non-technical assignments are posted on the classroom and it's due for today,April Lucas,2022-10-22 15:32:16,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,ok,Samuel King,2022-10-22 15:36:32,Text,2022-10-22 11:18:24,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,What torch version?,Joshua Rhodes,2022-10-22 16:06:24,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,the deadline for submission is tomorrow 8pm UTC,Allison Thompson,2022-10-22 16:21:20,Text,2022-10-22 14:21:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"I faced the same issue but it was fixed by following this thread
+<https://10academybatch6.slack.com/archives/C047EE54HPS/p1666419133797209?thread_ts=1666419133.797209&amp;cid=C047EE54HPS|https://10academybatch6.slack.com/archives/C047EE54HPS/p1666419133797209?thread_ts=1666419133.797209&amp;cid=C047EE54HPS>",Amy Leon,2022-10-22 17:06:08,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,for me creating  installing the libraries in a conda envt solved this problem,Judith Bolton,2022-10-22 18:40:00,Text,2022-10-22 15:49:20,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Good morning winners, welcome to week 9 of week 12 of this intensive training. We commend your resilience and perseverance as you sail through the thick and thin of this training. You’ve been pushing since the day you applied for this training and you never cease to push to get your tasks done. We are proud of you! You’ve started seeing some rays of light inside the tunnel - in the coming weeks, you’ll eventually see the light at the end of the tunnel. Do have a great week ahead :blush:",Garrett Bell,2022-10-17 06:09:04,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,The dates have not been updated,Brenda Hernandez,2022-10-19 09:50:56,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"I deeply believe that the two big blockers for African DE &amp; ML developers to be on a global scale are electricity and stable internet connectivity.
+How we can overcome it ???
+because of those problems I couldn't attend most of today session",Cristian Wilson,2022-10-19 15:38:40,Text,2022-10-19 15:38:40,2,2,"['U03UJGP0C68', 'U03V6HMRPGQ']",2022-10-21 13:24:16,all-week9
+Message,I second you. I'm really pissed off with my internet connection….I'm using the so called “LTE+” but lol i got a speed of 300Kb/s :sob::man-facepalming:,Judith Bolton,2022-10-19 18:48:32,Text,2022-10-19 15:38:40,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,I guess the trip Origin and Trip Destination contained the longitude and latitude of the location. right? and in that order?,Michelle Lewis,2022-10-19 20:07:28,Text,2022-10-19 20:07:28,4,2,"['U03UVHCV6KB', 'U03UJN29Y4C']",2022-10-19 21:15:44,all-week9
+Message,How could I join the two tables? do they have a common attribute that can I use to merge them together?,Katie Dickerson,2022-10-19 20:13:52,Text,2022-10-19 20:13:52,18,6,"['U03UUR571A5', 'U03UJGRN5E0', 'U03UJH1EQQL', 'U03UG1Z21JP', 'U03UVHCV6KB', 'U03UJN29Y4C']",2022-10-20 17:12:32,all-week9
+Message,You can merge them using pandas,Amy Leon,2022-10-19 20:22:24,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<https://www.w3schools.com/python/pandas/ref_df_merge.asp>,Amy Leon,2022-10-19 20:22:24,Link,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html>,Amy Leon,2022-10-19 20:22:24,Link,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"<@U03UUR571A5> Do we have a common column that exists in both? I think we need a common column to join two tables, right?",Katie Dickerson,2022-10-19 20:35:12,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"Yes we have, on the nb.csv we have *`Trip ID`* for the driver_location_data we have *`order_id`* Those two are similar",Amy Leon,2022-10-19 20:37:20,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,but for the driver_location data the unique one is order_id+driver_id since the order is broadcasted to multiple drivers.,Amy Leon,2022-10-19 20:39:28,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UUR571A5> Thanks,Katie Dickerson,2022-10-19 20:39:28,User,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Latitude comes first in alphabetical order and it also is the first coordinate in a set. Longitude is the second coordinate in the set. Given a default arrangement.,Travis Butler,2022-10-19 20:50:08,Text,2022-10-19 20:07:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"so to answer your question, no, in it is actually in reverse, latitude and then longitude",Travis Butler,2022-10-19 20:50:08,Text,2022-10-19 20:07:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,more on that here: <https://www.geographyrealm.com/remember-difference-latitude-longitude/>,Travis Butler,2022-10-19 20:50:08,Text,2022-10-19 20:07:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,Thank you Fish,Michelle Lewis,2022-10-19 21:15:44,Text,2022-10-19 20:07:28,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"On task 1 Exercise 2 of this week challenge we are required to create some relevant features using data that can be obtained in the public domain like rain vs no rain, holiday vs not-holiday however to do this types of feature additions we need to have time stamps which is not provided, how do you think we can deal with this issue?",Daniel Brown,2022-10-20 05:20:00,Text,1970-01-01 00:00:00,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,<@U03UP7V9Q57>,Katherine Foster,2022-10-20 05:32:48,User,2022-10-19 09:50:56,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,How was yesterday's guest talk?,Katherine Foster,2022-10-20 05:32:48,Text,2022-10-20 05:32:48,5,3,"['U03UG0YHAUT', 'U03UVHCV6KB', 'U03U93GNNVB']",2022-10-20 11:12:00,all-week9
+Message,<@U03U93GNNVB> That was nice and it provided a lot of domain knowledge.,Daniel Brown,2022-10-20 05:34:56,User,2022-10-20 05:32:48,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"I tried this way, df_merge = df_nb.merge(df_loc, how = 'inner', on = ['Trip ID', 'order_id']).  but it didn't work for me. how does it work for you? <@U03UJGRN5E0>",Kelly Soto,2022-10-20 05:43:28,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,"this is what worked for me
+```order_df.merge(trip_df, how='inner', left_on='order_id',right_on=""Trip ID"")```",Katie Dickerson,2022-10-20 06:09:04,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9
+Message,thanks <@U03UJGRN5E0>! it wok!,Kelly Soto,2022-10-20 06:13:20,Text,2022-10-19 20:13:52,0,0,[''],1970-01-01 00:00:00,all-week9

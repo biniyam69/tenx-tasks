@@ -52,14 +52,12 @@ class SlackDataLoader:
         '''
         write a function to get all the users from the json file
         '''
-        
+
         with open(os.path.join(self.path, 'users.json'), 'r') as f:
             users = json.load(f)
-        
-        
-
 
         return users
+
     
     def get_channels(self):
         '''
@@ -138,6 +136,7 @@ class SlackDataLoader:
     '''
 
     # combine all json file in all-weeks8-9
+    @staticmethod
     def slack_parser(paths):
         """Parse Slack data to extract useful information from JSON files."""
         
@@ -185,34 +184,112 @@ class SlackDataLoader:
         #create DataFrame from the extracted data
         df = pd.DataFrame(all_data)
         df = df[df['sender_name'] != 'Not provided'].reset_index(drop=True)
+        columns = ['msg_type', 'msg_content', 'sender_name', 'msg_sent_time', 'msg_dist_type', 'time_thread_start', 'reply_count', 'reply_users_count', 'reply_users', 'tm_thread_end', 'channel']
+        df = df[columns]
+        df['msg_sent_time'] = pd.to_datetime(df['msg_sent_time'], unit='s')
+        df['time_thread_start'] = pd.to_datetime(df['time_thread_start'], unit='s')
+        df['tm_thread_end'] = pd.to_datetime(df['tm_thread_end'], unit='s')
+        df['reply_users'] = df['reply_users'].apply(lambda x: x.split(','))
+        df['reply_users_count'] = df['reply_users_count'].astype(int)
+        df['reply_count'] = df['reply_count'].astype(int)
+        df['msg_dist_type'] = df['msg_dist_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['msg_type'] = df['msg_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['sender_name'] = df['sender_name'].apply(lambda x: x.replace('_', ' ').title())
+        
+        
+        return df
+
+
+    #parse slack data from every channel for training 
+    @staticmethod
+    def slack_parser_all(parent_directory):
+        """Parse Slack data from subdirectories to extract information from JSON files."""
+        all_data = {
+            'msg_type': [], 'msg_content': [], 'sender_name': [],
+            'msg_sent_time': [], 'msg_dist_type': [], 'time_thread_start': [],
+            'reply_count': [], 'reply_users_count': [], 'reply_users': [],
+            'tm_thread_end': [], 'channel': []
+        }
+
+        # Traverse through the directory tree starting from the parent directory
+        for root, dirs, files in os.walk(parent_directory):
+            for file_name in files:
+                if file_name.endswith('.json'):
+                    file_path = os.path.join(root, file_name)
+                    with open(file_path, 'r', encoding="utf8") as file:
+                        try:
+                            json_data = json.load(file)
+
+                            if isinstance(json_data, list):  # Assuming each file contains a list of dictionaries
+                                for row in json_data:
+                                    if isinstance(row, dict):
+                                        all_data['msg_type'].append(row.get('type', ''))
+                                        all_data['msg_content'].append(row.get('text', ''))
+                                        all_data['sender_name'].append(row.get('user_profile', {}).get('real_name', 'Not provided'))
+                                        all_data['msg_sent_time'].append(row.get('ts', ''))
+                                        if 'blocks' in row and row['blocks']:
+                                            block = row['blocks'][0]
+                                            if 'elements' in block and block['elements']:
+                                                element = block['elements'][0]
+                                                if 'elements' in element and element['elements']:
+                                                    all_data['msg_dist_type'].append(element['elements'][0].get('type', 'reshared'))
+                                                else:
+                                                    all_data['msg_dist_type'].append('reshared')
+                                            else:
+                                                all_data['msg_dist_type'].append('reshared')
+                                        else:
+                                            all_data['msg_dist_type'].append('reshared')
+                                        all_data['time_thread_start'].append(row.get('thread_ts', 0))
+                                        all_data['reply_users'].append(",".join(row.get('reply_users', [])))
+                                        all_data['reply_count'].append(row.get('reply_count', 0))
+                                        all_data['reply_users_count'].append(row.get('reply_users_count', 0))
+                                        all_data['tm_thread_end'].append(row.get('latest_reply', 0))
+                                        all_data['channel'].append(file_path.split('/')[-2])
+                        except json.JSONDecodeError as e:
+                            print(f"Error decoding JSON in file: {file_path}. Error: {e}")
+
+        #create a DataFrame from the extracted data
+        df = pd.DataFrame(all_data)
+        
+        #apply data cleaning and type conversions
+        df = df[df['sender_name'] != 'Not provided'].reset_index(drop=True)
+        df['msg_sent_time'] = pd.to_datetime(df['msg_sent_time'], unit='s')
+        df['time_thread_start'] = pd.to_datetime(df['time_thread_start'], unit='s')
+        df['tm_thread_end'] = pd.to_datetime(df['tm_thread_end'], unit='s')
+        df['reply_users'] = df['reply_users'].apply(lambda x: x.split(','))
+        df['reply_users_count'] = df['reply_users_count'].astype(int)
+        df['reply_count'] = df['reply_count'].astype(int)
+        df['msg_dist_type'] = df['msg_dist_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['msg_type'] = df['msg_type'].apply(lambda x: x.replace('_', ' ').title())
+        df['sender_name'] = df['sender_name'].apply(lambda x: x.replace('_', ' ').title())
         
         return df
 
 
     @staticmethod
-def parse_slack_reaction(paths):
-    combined_data = []
+    def parse_slack_reaction(paths):
+        combined_data = []
 
-    for path in paths:
-        for json_file in glob.glob(f"{path}/*.json"):
-            with open(json_file, 'r') as slack_data:
-                data = json.load(slack_data)
+        for path_channel in paths:
+            for json_file in glob.glob(f"{path_channel}/*.json"):
+                with open(json_file, 'r') as slack_data:
+                    data = json.load(slack_data)
 
-                for item in data:
-                    if 'reactions' in item:
-                        for reaction in item['reactions']:
-                            msg = item.get('text', '')
-                            user_id = item.get('user', '')
-                            reaction_name = reaction['name']
-                            reaction_count = reaction['count']
-                            reaction_users = ",".join(reaction['users'])
+                    for item in data:
+                        if 'reactions' in item:
+                            for reaction in item['reactions']:
+                                msg = item.get('text', '')
+                                user_id = item.get('user', '')
+                                reaction_name = reaction['name']
+                                reaction_count = reaction['count']
+                                reaction_users = ",".join(reaction['users'])
 
-                            combined_data.append([reaction_name, reaction_count, len(reaction['users']), msg, user_id])
+                                combined_data.append([reaction_name, reaction_count, len(reaction['users']), msg, user_id])
 
-    columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
-    df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
-    df_reaction['channel'] = [re.search(r'all-week\d', path).group() for _ in range(len(combined_data))]
-    return df_reaction
+            columns_reaction = ['reaction_name', 'reaction_count', 'reaction_users_count', 'message', 'user_id']
+            df_reaction = pd.DataFrame(combined_data, columns=columns_reaction)
+            df_reaction['channel'] = [re.search(r'all-week\d', path_channel).group() for _ in range(len(combined_data))]
+            return df_reaction
 
 
         # for json_file in glob.glob(f"{path}*.json"):
@@ -246,6 +323,7 @@ def parse_slack_reaction(paths):
         
         # return df_reaction
 
+    @staticmethod
     def get_community_participation(path):
         """ specify path to get json files"""
         combined = []
