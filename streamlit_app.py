@@ -127,7 +127,7 @@ sentiment_data = pd.DataFrame({
 
 
 sentiment_type = st.sidebar.selectbox("Select Sentiment", ["Negative", "Neutral", "Positive"])
-st.subheader(" :sob: :joy: :neutral_face: Time Series chart for {sentiment_type} sentiment over time")
+st.subheader(f" :sob: :joy: :neutral_face: Time Series chart for {sentiment_type} sentiment over time")
 st.line_chart(sentiment_data[sentiment_type],use_container_width=True)
 
 
