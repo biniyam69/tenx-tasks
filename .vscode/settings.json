@@ -67,5 +67,6 @@
             "username": "biniyam",
             "password": "heisenberg"
         }
-    ]
+    ],
+    "python.analysis.autoImportCompletions": true
 }
