@@ -34,5 +34,38 @@
     "python.linting.flake8Path": "${env:HOME}/.local/bin/flake8",
     "python.formatting.blackPath": "${env:HOME}/.local/bin/black",
     "python.analysis.typeCheckingMode": "basic",
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "tenx",
+            "database": "tenxtasks",
+            "username": "biniysm",
+            "password": ""
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "tenx",
+            "group": "tenx",
+            "database": "tenacademy",
+            "username": "biniyam"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "tenx",
+            "group": "tenx",
+            "database": "tenac",
+            "username": "biniyam",
+            "password": "heisenberg"
+        }
+    ]
 }
